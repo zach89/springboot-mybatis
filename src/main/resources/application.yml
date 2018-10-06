@@ -1,11 +1,28 @@
 server:
-  port: 8080
+  port: 8100
 spring:
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/springboot?useSSL=true&useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: zach1989
+  application:
+    name: dubbo-provider
+dubbo:
+  application:
+    id: dubbo-provider
+    name: dubbo-provider
+  protocol:
+    name: dubbo
+    id: dubbo
+    port: 12345
+    status: server
+    server: true
+  registry:
+    id: my-dubbo
+    address: N/A
+  scan:
+    base-packages: com.sf.zachweb.services
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   map-underscore-to-camel-case: true
