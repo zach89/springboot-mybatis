@@ -1,11 +1,13 @@
 server:
-  port: 8080
+  port: 8101
 spring:
   datasource:
     url: jdbc:mysql://127.0.0.1:3306/springboot?useSSL=true&useUnicode=true&characterEncoding=utf8&allowMultiQueries=true
     driver-class-name: com.mysql.jdbc.Driver
     username: root
     password: zach1989
+  application:
+    name: dubbo-consumer
 mybatis:
   mapper-locations: classpath:mapper/*.xml
   map-underscore-to-camel-case: true
@@ -15,3 +17,11 @@ pagehelper:
   helper-dialect: mysql
   reasonable: true
   support-methods-arguments: true
+dubbo:
+  application:
+    id: dubbo-consumer
+    name: dubbo-consumer
+  protocol:
+    id: dubbo
+    name: dubbo
+    port: 12345
