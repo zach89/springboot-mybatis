@@ -18,9 +18,14 @@ pagehelper:
   reasonable: true
   support-methods-arguments: true
 dubbo:
+  registry:
+    address: 127.0.0.1:2181
+    id: zach-registry
+    protocol: zookeeper
   application:
     id: dubbo-consumer
     name: dubbo-consumer
+    version: v1.0.0
   protocol:
     id: dubbo
     name: dubbo
